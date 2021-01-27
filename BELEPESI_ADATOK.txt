@@ -1,0 +1,6 @@
+user
+user
+
+Adatbázis: Beosztas-project\Database_save
+Sok adat: 2020.február
+

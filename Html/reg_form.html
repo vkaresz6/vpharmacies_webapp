@@ -1,0 +1,39 @@
+
+<p>
+<div class="center-mind h-25 w-25">
+  
+    <form action="reg-succes.php" method="post">
+      <div class="form-group">
+        <input class="form-control" type="text" name="username" placeholder="Felhasználó név" required>   
+      </div>
+      <div class="form-group">
+        <input class="form-control" type="password" name="password" placeholder="Jelszó" required>
+        <input class="form-control" type="password" name="password-repeat" placeholder="Jelszó úra" required>
+      </div>
+      <div class="form-group">
+        <input class="form-control" type="text" name="TAJ" placeholder="TAJ" required>   
+      </div>
+      <div class="form-group">
+        <input class="form-control" type="text" name="adress" placeholder="Cím" required>   
+      </div>
+        <div>
+        <label><input type="radio" name="role" value="user" checked> Felhasználó</label>
+        <label><input type="radio" name="role" value="worker"> Dolgozó</label>
+    </div>
+    <div class="worker box">
+        <label for="pharmacies">Gyógyszertárak</label>
+    <select name="pharmacies" id="pharmacies">
+    <option value="1">őrangyal</option>
+    <option value="2">Tulipán</option>
+    <option value="3">Cédrus</option>
+    <option value="4">Nagylak</option>
+    </select>
+    </div>
+  
+        <div class="form-group">
+        <a href="index.php"><input type="button" class="btn btn-danger" value="Mégsem"></a>
+        <input class="btn btn-success" type="submit" value="Regisztráció">
+      </div>
+    </form>   
+  
+</div>

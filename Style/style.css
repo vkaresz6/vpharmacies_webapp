@@ -1,0 +1,55 @@
+body {
+    background-color: white;
+}
+.box{
+        color: #fff;
+        padding: 20px;
+        display: none;
+        margin-top: 20px;
+    }
+    label{ margin-right: 15px;
+           color : black;}
+.center-mind {
+  position: absolute;
+  left: 50%;
+  top: 50%;  
+  transform: translate(-50%, -50%); 
+  min-width: 180px;
+}
+
+.table{
+    background-color: ghostwhite;
+}
+
+.flex-container {
+  display: flex;   
+  justify-content: center;
+}
+
+.flex-container > div {  
+  margin: 10px;
+  padding: 20px;
+}
+#beosztasTarolo{
+    margin-top: 30px;
+}
+#lapozoTarolo{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}  
+  
+.lapozoBox{
+    padding: 6px;
+}
+.icon{
+    font-size: 30px;
+    line-height: 20px;
+    padding-bottom: 14px;
+    cursor: pointer;
+    color: gray;
+}
+
+.icon:hover{
+    color: black;
+}

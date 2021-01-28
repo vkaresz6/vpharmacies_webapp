@@ -17,8 +17,8 @@ function printMenu() {
     if (isLogged()) {
         
         $menu = str_replace('::ki_belepes',
-                    '<li class="nav-item"> <a class="nav-link text-light" href="beosztas.php">Beosztás </a></li>'
-                .   '<li class="nav-item"> <a class="nav-link text-light" href="userinfo.php">Saját adatok</a></li>'
+                    '<li class="nav-item"> <a class="nav-link text-light" href="myMeds.php">Gyógyszereim </a></li>'
+                .   '<li class="nav-item"> <a class="nav-link text-light" href="MEssageToPh.php">Visszajelzés küldése patikának</a></li>'
                  
                 . '</ul></div>'
                 . '<div class="navbar-collapse">'

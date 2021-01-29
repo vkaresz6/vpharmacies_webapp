@@ -18,7 +18,7 @@ function printMenu() {
         
         $menu = str_replace('::ki_belepes',
                     '<li class="nav-item"> <a class="nav-link text-light" href="myMeds.php">Gyógyszereim </a></li>'
-                .   '<li class="nav-item"> <a class="nav-link text-light" href="MEssageToPh.php">Visszajelzés küldése patikának</a></li>'
+                .   '<li class="nav-item"> <a class="nav-link text-light" href="MEssageToPh.php">Üzenet</a></li>'
                  
                 . '</ul></div>'
                 . '<div class="navbar-collapse">'

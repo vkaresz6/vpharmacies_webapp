@@ -12,14 +12,14 @@ if (!empty($_POST['username']) && (!empty($_POST['password']))){
     $stmt -> bind_param('ss',$username, $pwd);
     $stmt -> execute();
     $stmt -> store_result();
-        
+                echo("sdgsd");
+
     if ($stmt -> num_rows == 1){
         //belépett
-        $stmt -> bind_result($id, $username);
+        $stmt -> bind_result($id, $username, $temp1, $temp2, $temp3);
         $stmt -> fetch();
         //dd($id);
-       
-        $_SESSION['fid'] = 1;
+        $_SESSION['fid'] = $id;
         $_SESSION['username'] = $username;
         $_SESSION['login'] = true;
         header('Location: index.php');

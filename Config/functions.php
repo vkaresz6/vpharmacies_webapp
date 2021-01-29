@@ -17,8 +17,8 @@ function printMenu() {
     if (isLogged()) {
         
         $menu = str_replace('::ki_belepes',
-                    '<li class="nav-item"> <a class="nav-link text-light" href="myMeds.php">Gyógyszereim </a></li>'
-                .   '<li class="nav-item"> <a class="nav-link text-light" href="MEssageToPh.php">Üzenet</a></li>'
+                    '<li class="nav-item"> <a class="nav-link text-light" href="gyogyszereim.php">Gyógyszereim </a></li>'
+                .   '<li class="nav-item"> <a class="nav-link text-light" href="chat.php">Chat</a></li>'
                  
                 . '</ul></div>'
                 . '<div class="navbar-collapse">'
@@ -32,24 +32,4 @@ function printMenu() {
     }
     
     echo $menu;
-}
-
-function getFirsDay($date){
-    $modDate = (new DateTime($date))
-      ->modify('first day of this month')
-      ->format('Y-m-d');
-
-    return $modDate;
-}
-
-function getLastDay($date){
-    $modDate = (new DateTime($date))
-      ->modify('last day of this month')
-      ->format('Y-m-d');
-
-    return $modDate;
-}
-
-function increaseDateDay($date, $day){    
-    return date('Y-m-d', strtotime($date . ' +'.$day.' day'));    
 }

@@ -5,8 +5,10 @@ require_once('config/init.php');
 
 printHTML('html/header.html');
 printMenu();
+printHTML('html/gyogyszereim.html');
 
-$limit = 1;
+
+$limit = 10;
 
 	if (isset($_POST['page_no'])) {
 	    $page_no = $_POST['page_no'];
@@ -27,28 +29,40 @@ $limit = 1;
 	$output.="<table class='table'>
 		    <thead>
 		        <tr>
-		           <th>Id</th>
-    	          	   <th>TTT</th>
-                           <th>actor</th>
-			   <th>from</th>
-			   <th>to</th>
-			   <th>Amount</th>
-                           <th>exist</th>
+    	          	   <th>Gyógyszer neve</th>
+			   <th>Patika neve</th>
+			   <th>Mennyiség</th>
 	                 </tr>
 		    </thead>
 	         <tbody>";
+        
         while ($row = mysqli_fetch_assoc($result)) {
+            
+                $sql = "SELECT OEP_NEV, OEP_KSZ FROM gyogysz WHERE OEP_TTT = " . $row['OEP_TTT'];
+                $stmt = $con -> prepare($sql);
+                $stmt -> execute();
+                $stmt -> store_result();
+                $stmt -> bind_result($OEP_NEV, $OEP_KSZ);
+                $stmt -> fetch();
+                
+                $sql = "SELECT name FROM pharmacies WHERE id =" .  $row['from_ph_id'];
+                $stmt = $con -> prepare($sql);
+                $stmt -> execute();
+                $stmt -> store_result();
+                $stmt -> bind_result($pharmacy_name);
+                $stmt -> fetch();
+                $gyogysz = $OEP_NEV .' ' . $OEP_KSZ;
+                        //TODO: a 0-t íírd át 1 re
 
-	$output.="<tr>
-	            <td>{$row['id']}</td>
-                    <td>{$row['OEP_TTT']}</td>
-	            <td>{$row['actor_id']}</td>
-	            <td>{$row['from_ph_id']}</td>
-	            <td>{$row['to_pa_id']}</td>
+                if ($row['exist'] == 0 || $row['exist'] == 2) {
+                $output.="<tr>
+                    <td>$gyogysz</td>
+	            <td>$pharmacy_name</td>
 	            <td>{$row['amount']}</td>
-                    <td>{$row['exist']}</td>
 
 		 </tr>";
+            }
+	
 	} 
 	$output.="</tbody>
 		</table>";
@@ -77,6 +91,5 @@ $limit = 1;
 	echo $output;
         }
 printHTML('html/footer.html');
-printHTML('html/gyogyszereim.html');
 $con -> close();
 ?>

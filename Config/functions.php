@@ -1,4 +1,10 @@
+
+
 <?php
+
+
+
+
 
 function printHTML($html) {
     echo file_get_contents($html);
@@ -33,3 +39,4 @@ function printMenu() {
     
     echo $menu;
 }
+
